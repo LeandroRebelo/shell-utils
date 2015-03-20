@@ -10,22 +10,13 @@
 ## CHANGELOG:
 ## 1.0 - Script created
 ## 1.1 - Direct download
-## 1.2 - Spotify and source list
+## 
 ##
 ####################################################################
 #!/bin/sh
 
 ### PPA / SOURCES ###
-sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:libreoffice/ppa
-if [ -e "/etc/apt/sources.list.d/spotify.list" ]; then
-	echo "source spotify list already exists in '/etc/apt/sources.list.d/spotify.list'"
-else
-	sudo sh -c 'echo "deb http://repository.spotify.com/ stable non-free" > /etc/apt/sources.list.d/spotify.list'
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
-	echo "source spotify list was included in '/etc/apt/sources.list.d/spotify.list'"
-fi
-
 
 ### Update packs ###
 sudo apt-get update
@@ -34,18 +25,18 @@ sudo apt-get dist-upgrade
 
 
 ### Download via apt ###
-# l1 - Flash Player
-# l2 - Multimedia codecs
+# l1 - Mozilla Foundation
+# l2 - Libreoffice
 # l3 - Rar and other archiving utilities
 # l4 - Infos about hard, system. partitions and process
 # l5 - Editors and programming
 # l6 - build essentials
 sudo apt-get install \
-	pepperflashplugin-nonfree \
-	ubuntu-restricted-extras spotify-client \
+	firefox thunderbird \
+	libreoffice \
 	unace p7zip-rar sharutils rar arj lunzip lzip \
 	hardinfo htop iptraf gparted unetbootin whois \
-	vim git gitk oracle-java8-installer oracle-java8-set-default apache2 mysql-server mysql-client php5 python \
+	vim gedit git gitk openjdk-7-jre apache2 mysql-server mysql-client php5 python \
 	gcc make build-essential \
 
 
