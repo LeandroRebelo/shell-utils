@@ -6,12 +6,13 @@
 ## that uses .deb packages and apt-get utility
 ##
 ## It's a way to install some util packages
-##
+## 
 ## CHANGELOG:
 ## 1.0 - Script created
 ## 1.1 - Direct download
-## 
+## 1.2 - Change for free softwares
 ##
+## @LeandroRebelo
 ####################################################################
 #!/bin/sh
 
@@ -26,18 +27,22 @@ sudo apt-get dist-upgrade
 
 ### Download via apt ###
 # l1 - Mozilla Foundation
-# l2 - Libreoffice
+# l2 - Editors and libreoffice
 # l3 - Rar and other archiving utilities
 # l4 - Infos about hard, system. partitions and process
-# l5 - Editors and programming
-# l6 - build essentials
+# l5 - Programming
+# l6 - Build essentials
+# l7 - Remote connection
+# l8 - Utilities
 sudo apt-get install \
 	firefox thunderbird \
-	libreoffice \
+	vim gedit libreoffice \
 	unace p7zip-rar sharutils rar arj lunzip lzip \
 	hardinfo htop iptraf gparted unetbootin whois \
-	vim gedit git gitk openjdk-7-jre apache2 mysql-server mysql-client php5 python \
+	git gitk openjdk-7-jre apache2 mysql-server mysql-client php5 python \
 	gcc make build-essential \
+	openssh \
+	brasero transmission gtkpod \
 
 
 ### Direct download ###
